@@ -21,10 +21,10 @@ BLEMidi blemidi;
 MIDI_CREATE_BLE_INSTANCE(blemidi);
 
 bool startTest = false;
-int on_count = 0;
+int on_count = 1;
 int off_count = 0;
 
-unsigned long on_interval = 5;
+unsigned long on_interval = 15;
 unsigned long off_interval = on_interval;
 
 unsigned long prev_on = millis();
@@ -62,7 +62,7 @@ void setup()
    */
   Bluefruit.Advertising.restartOnDisconnect(true);
   Bluefruit.Advertising.setInterval(32, 244);    // in unit of 0.625 ms
-  Bluefruit.Advertising.setFastTimeout(30);      // number of seconds in fast mode
+  Bluefruit.Advertising.setFastTimeout(40);      // number of seconds in fast mode
   Bluefruit.Advertising.start(0);                // 0 = Don't stop advertising after n seconds
 
   Serial.println("Waiting for connection...");
