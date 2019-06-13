@@ -39,12 +39,12 @@ void loop()
 
   if (value)
   {
-    if ( value > 0 )
+    if ( value > 180 )
     {
-      Serial.println("Right");
+      Serial.println("Left"); //左
     }else
     {
-      Serial.println("Left");
+      Serial.println("Right"); //右
     }
   }
 }
